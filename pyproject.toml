@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pubmed-miner"
+version = "0.1.0"
+description = "Biomedical literature mining toolkit for grant hypothesis generation"
+authors = [{ name = "Scott A. Bowler", email = "sbowler49601@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["pubmed", "nlp", "bioinformatics", "literature-mining", "biomedical"]
+
+dependencies = [
+    "biopython>=1.81",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "numpy>=1.24",
+    "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-cov>=4.1"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pubmed_miner*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
